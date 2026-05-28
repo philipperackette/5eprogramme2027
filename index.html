@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathématiques 5e — Comparaison des programmes officiels (2020 / 2026) — v2 corrigée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --paper: #ffffff;
+    --ink: #1a1814;
+    --ink-soft: #4a463e;
+    --rule: #d6cfc2;
+    --rule-soft: #ebe5d8;
+    --ancien: #8b3a1f;
+    --ancien-bg: #f4eae3;
+    --nouveau: #2a5266;
+    --nouveau-bg: #e6edf0;
+    --note: #6b6357;
+    --warn: #a07020;
+    --warn-bg: #faf3e3;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 17px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    line-height: 1.55;
+    font-feature-settings: "onum" 1, "liga" 1;
+  }
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 3rem 6rem;
+    background: var(--paper);
+    border-left: 1px solid var(--rule-soft);
+    border-right: 1px solid var(--rule-soft);
+    min-height: 100vh;
+  }
+  header.masthead {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--note);
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+    color: var(--ink);
+  }
+  h1 em {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0;
+  }
+  .meta {
+    margin-top: 1.2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--note);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .meta span strong { color: var(--ink); font-weight: 500; }
+
+  h2 {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ancien);
+    margin-right: 0.8rem;
+    font-weight: 500;
+  }
+
+  p { margin: 0 0 1rem; }
+  p.lead { font-size: 1.08rem; color: var(--ink-soft); }
+
+  .erratum {
+    background: var(--warn-bg);
+    border: 1px solid #e0c890;
+    border-left: 3px solid var(--warn);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.95rem;
+  }
+  .erratum h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warn);
+    margin: 0 0 0.6rem;
+    font-weight: 500;
+  }
+
+  .sources {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--ink);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.95rem;
+  }
+  .sources h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--note);
+    margin: 0 0 0.8rem;
+    font-weight: 500;
+  }
+  .sources ol { margin: 0; padding-left: 1.2rem; }
+  .sources li { margin-bottom: 0.4rem; }
+  .sources a { color: var(--nouveau); text-decoration: none; border-bottom: 1px dotted var(--nouveau); }
+  .sources a:hover { border-bottom-style: solid; }
+
+  /* Tableau */
+  .table-wrap { margin: 2rem 0; overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  thead th {
+    text-align: left;
+    padding: 0.9rem 0.9rem;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    vertical-align: bottom;
+  }
+  thead th.col-domain { width: 14%; }
+  thead th.col-ancien { width: 33%; color: var(--ancien); }
+  thead th.col-nouveau { width: 33%; color: var(--nouveau); }
+  thead th.col-evol { width: 20%; }
+
+  tbody td {
+    padding: 1rem 0.9rem;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  tbody tr:hover { background: #fdfbf6; }
+  tbody td.domain {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  tbody td.ancien { background: rgba(139, 58, 31, 0.025); }
+  tbody td.nouveau { background: rgba(42, 82, 102, 0.03); }
+  tbody td.evol {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+  }
+  tbody td.evol strong { font-style: normal; color: var(--ancien); font-weight: 500; }
+  tbody td.evol .add { color: var(--nouveau); font-style: normal; font-weight: 500; }
+  tbody td.evol .same { color: var(--note); font-style: normal; font-weight: 500; }
+
+  q {
+    quotes: "« " " »";
+    font-style: italic;
+    color: var(--ink);
+  }
+  sup.ref {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ancien);
+    padding-left: 0.15em;
+    font-weight: 500;
+  }
+  sup.ref.new { color: var(--nouveau); }
+  sup.ref.rep { color: #6b5b3a; }
+
+  /* Synthèse */
+  .synthese {
+    background: var(--bg);
+    padding: 1.8rem 2rem;
+    border: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+  .synthese h3 {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    margin: 1.4rem 0 0.5rem;
+    color: var(--ink);
+  }
+  .synthese h3:first-child { margin-top: 0; }
+  .synthese ul {
+    margin: 0.4rem 0 0;
+    padding-left: 1.2rem;
+  }
+  .synthese ul li { margin-bottom: 0.4rem; }
+
+  /* Légende */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--note);
+    margin: 1rem 0 1.5rem;
+    flex-wrap: wrap;
+  }
+  .legend span::before {
+    content: "";
+    display: inline-block;
+    width: 10px; height: 10px;
+    margin-right: 0.4em;
+    vertical-align: 1px;
+  }
+  .legend .l-ancien::before { background: var(--ancien); }
+  .legend .l-rep::before { background: #6b5b3a; }
+  .legend .l-nouveau::before { background: var(--nouveau); }
+
+  /* Notes */
+  .notes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    column-count: 2;
+    column-gap: 2.5rem;
+  }
+  .notes h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--note);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    column-span: all;
+  }
+  .notes ol { padding-left: 1.5rem; margin: 0; }
+  .notes ol li { margin-bottom: 0.4rem; break-inside: avoid; }
+
+  footer.colophon {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule-soft);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--note);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 800px) {
+    .page { padding: 2rem 1.2rem 4rem; }
+    h1 { font-size: 1.9rem; }
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr {
+      border: 1px solid var(--rule);
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+    }
+    tbody td { border-bottom: 1px dashed var(--rule-soft); }
+    tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--note);
+      margin-bottom: 0.3rem;
+    }
+    tbody td.ancien::before { color: var(--ancien); }
+    tbody td.nouveau::before { color: var(--nouveau); }
+    .notes { column-count: 1; }
+  }
+
+  @media print {
+    body { background: white; }
+    .page { border: none; padding: 1cm; max-width: none; }
+    tbody tr:hover { background: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <div class="eyebrow">Analyse comparative — Éducation nationale française · version 2 corrigée</div>
+  <h1>Mathématiques en classe de 5<sup>e</sup><br><em>ancien programme&nbsp;/ nouveau programme</em></h1>
+  <p class="subtitle">Comparaison textuelle des programmes officiels et de leurs repères de progression</p>
+  <div class="meta">
+    <span><strong>Ancien :</strong> BO n°31 du 30 juillet 2020 + repères annuels</span>
+    <span><strong>Nouveau :</strong> BO n°10 du 5 mars 2026</span>
+    <span><strong>Application :</strong> rentrée 2026-2027</span>
+  </div>
+</header>
+
+<div class="erratum">
+  <h3>Erratum — différences avec la version précédente</h3>
+  <p style="margin: 0;">Cette version intègre les <strong>repères annuels de progression pour la 5<sup>e</sup></strong> publiés par éduscol en complément du BO de 2020, qui répartissent les attendus de fin de cycle entre les trois années. Plusieurs notions présentées dans la version 1 comme <q>repoussées</q> par le programme 2026 étaient en réalité <strong>déjà</strong> au niveau indiqué dans les repères&nbsp;: multiplication des relatifs, produit de fractions, double distributivité, pyramide, cône, boule, médiane, fonctions affines. Le tableau ci-dessous distingue désormais les <strong>vraies évolutions</strong> des simples passages d'un texte indicatif (les repères) à un texte prescriptif (le nouveau programme).</p>
+</div>
+
+<h2><span class="num">§ 1</span>Avertissement méthodologique</h2>
+<p class="lead">Cette comparaison se fonde exclusivement sur les <strong>textes officiels</strong> publiés au Bulletin officiel et sur le site éduscol du ministère de l'Éducation nationale. Toutes les citations entre guillemets sont issues verbatim de ces textes et référencées en fin de document.</p>
+<p>L'ancien dispositif de 2020 se composait de deux textes complémentaires&nbsp;: le <strong>programme du cycle 4</strong> (BO n°31), qui fixait des attendus de fin de cycle sans répartition annuelle, et les <strong>repères annuels de progression</strong> (éduscol), qui précisaient ce qui devait être abordé en 5<sup>e</sup>, en 4<sup>e</sup> puis en 3<sup>e</sup>. Le nouveau programme de 2026 fusionne ces deux niveaux dans un texte unique, prescriptif, organisé année par année. La comparaison fine n'a donc de sens qu'en confrontant la <strong>colonne 5<sup>e</sup> des repères 2020</strong> à la <strong>section 5<sup>e</sup> du programme 2026</strong>.</p>
+
+<div class="sources">
+  <h3>Sources officielles utilisées</h3>
+  <ol>
+    <li><strong>BOEN n°31 du 30 juillet 2020</strong>, Annexe 3, partie « Mathématiques » (pages 127 à 137) — programme du cycle 4.</li>
+    <li><strong>Repères annuels de progression — 5<sup>e</sup>, Mathématiques</strong> (éduscol, MENJ, complément du programme cycle 4, document <em>Reperes_Mathematiques_5e</em>, 24 p.), incluant les <em>Attendus de fin d'année</em>.</li>
+    <li><strong>Arrêté du 18 février 2026</strong> publié au <strong>BOEN n°10 du 5 mars 2026</strong>, Annexe 2 — « Programme de mathématiques pour le cycle 4 ». Lien&nbsp;: <a href="https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A">education.gouv.fr/bo/2026/Hebdo10/MENE2602912A</a></li>
+  </ol>
+</div>
+
+<h2><span class="num">§ 2</span>Tableau comparatif</h2>
+
+<div class="legend">
+  <span class="l-ancien">Programme cycle 4 (BO 2020)</span>
+  <span class="l-rep">Repères 5<sup>e</sup> (éduscol 2020)</span>
+  <span class="l-nouveau">Nouveau programme 5<sup>e</sup> (BO 2026)</span>
+</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th class="col-domain">Domaine</th>
+      <th class="col-ancien">Ancien dispositif — 5<sup>e</sup> (programme cycle 4 + repères)</th>
+      <th class="col-nouveau">Nouveau programme — 5<sup>e</sup> (BO 2026)</th>
+      <th class="col-evol">Évolution réelle</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Cadre général</td>
+      <td class="ancien" data-label="Ancien">Six compétences&nbsp;: <q>chercher, modéliser, représenter, raisonner, calculer, communiquer</q><sup class="ref">1</sup>. Liste d'<q>automatismes</q><sup class="ref">2</sup> en fin de chaque thème, à l'échelle du cycle.</td>
+      <td class="nouveau" data-label="Nouveau">Mêmes six compétences. Ajout, dans chaque domaine et <strong>à chaque niveau</strong>, des rubriques&nbsp;: <q>Automatismes</q><sup class="ref new">3</sup> et <q>Prolongements possibles : mises en perspective historiques ou culturelles</q><sup class="ref new">4</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Ajout</span>&nbsp;: histoire des maths&nbsp;; automatismes désormais cadrés par année.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Nombres relatifs</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>Les nombres relatifs … sont construits pour rendre possibles toutes les soustractions</q><sup class="ref rep">5</sup>&nbsp;; addition et soustraction des décimaux relatifs uniquement. Produit et quotient explicitement en 4<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: définition, opposé, valeur absolue, comparaison&nbsp;; <q>Additionner deux nombres décimaux relatifs</q><sup class="ref new">6</sup> et soustraire. Produit et quotient en 4<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span> sur le fond pour la 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Fractions / rationnels</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: additionner et soustraire <q>des fractions dont les dénominateurs sont égaux ou multiples l'un de l'autre</q><sup class="ref rep">7</sup>. Produit et quotient en 4<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Additionner et soustraire des fractions de dénominateurs quelconques</q><sup class="ref new">8</sup>. Produit et quotient toujours en 4<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Extension</span>&nbsp;: dénominateurs <strong>quelconques</strong> (plus exigeant que « égaux ou multiples »).</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Divisibilité, nombres premiers</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>introduction de la notion de nombre premier</q><sup class="ref rep">9</sup>, liste des nombres premiers <q>inférieurs ou égaux à 30</q><sup class="ref rep">10</sup>, décomposition en facteurs premiers. Critères de divisibilité par 2, 3, 5, 9, 10 attendus en fin de 5<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: multiples, diviseurs, division euclidienne, <q>critères de divisibilité par 3 et par 9</q><sup class="ref new">11</sup>. Les nombres premiers ne figurent qu'en <q>Prolongements possibles</q><sup class="ref new">12</sup>. Décomposition en facteurs premiers décalée en 3<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><strong>Vraie sortie</strong>&nbsp;: les nombres premiers et leur décomposition quittent la 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Puissances</td>
+      <td class="ancien" data-label="Ancien">Aucune trace de puissances en 5<sup>e</sup> dans les repères. <q>Les puissances de 10 sont d'abord introduites avec des exposants positifs, puis négatifs</q><sup class="ref rep">13</sup> en 4<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Découvrir la notion de puissance d'un nombre et sa notation dans le cas du carré et du cube</q><sup class="ref new">14</sup>, carrés des entiers de 0 à 12.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Vraie apparition</span> en 5<sup>e</sup> (limitée au carré et au cube).</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Calcul littéral — distributivité</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: distributivité simple pour <q>réduire une expression littérale de la forme ax + bx</q><sup class="ref rep">15</sup>. Double distributivité en 3<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>distributivité simple sur des exemples numériques</q><sup class="ref new">16</sup>&nbsp;; factorisation/développement avec k(a+b). Double distributivité en 3<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span> sur le fond.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Calcul littéral — équations</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>tester si une égalité où figure une lettre est vraie</q><sup class="ref rep">17</sup>, première approche de la notion de solution, <em>sans formalisation</em>. Mise en équation formelle en 4<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Donner à la lettre le statut d'inconnue</q><sup class="ref new">18</sup>, modéliser et <q>résoudre des équations du type ax = c ou x + b = c</q><sup class="ref new">19</sup> par opérations inverses.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Avancée</span>&nbsp;: les équations à une opération sont désormais formellement traitées en 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Repérage</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>Le repérage se fait sur une droite graduée ou dans le plan muni d'un repère orthogonal</q><sup class="ref rep">20</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>lire les coordonnées d'un point donné ; placer un point de coordonnées données</q><sup class="ref new">21</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Espace et volumes</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: aire du parallélogramme, <q>volume du prisme et du cylindre</q><sup class="ref rep">22</sup>, aire du disque attendue. Pyramide et cône en 4<sup>e</sup>, boule en 3<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: volumes du cube, pavé, prisme&nbsp;; <q>Calculer l'aire du disque, le volume du cylindre de révolution</q><sup class="ref new">23</sup>. Pyramide, cône en 4<sup>e</sup>&nbsp;; boule en 3<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span> sur le fond.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Transformations</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: symétrie centrale et ses propriétés (conservation longueurs, angles, parallélisme). Translation en 4<sup>e</sup>. <strong>Rotation et homothétie en 3<sup>e</sup>.</strong></td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Définir le demi-tour, ou symétrie centrale</q><sup class="ref new">24</sup>. Translation en 4<sup>e</sup>. <strong>Rotation et homothétie absentes</strong> du cycle 4.</td>
+      <td class="evol" data-label="Évolution">5<sup>e</sup> inchangée, mais <strong>disparition</strong> de la rotation et de l'homothétie du cycle 4.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Angles</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>La caractérisation angulaire du parallélisme … est énoncée</q><sup class="ref rep">25</sup>, angles alternes-internes et correspondants.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Caractériser le parallélisme par les angles : angles alternes internes, angles correspondants</q><sup class="ref new">26</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Triangles</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: somme des angles, <q>L'inégalité triangulaire est énoncée</q><sup class="ref rep">27</sup>, médiatrice (concourance possible à démontrer), <q>nouvelles droites remarquables du triangle : les hauteurs</q><sup class="ref rep">28</sup>. Cas d'égalité en 4<sup>e</sup>. Triangles semblables en 3<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: somme des angles, médiatrices et cercle circonscrit, hauteurs concourantes, <q>Définir et tracer les médianes</q><sup class="ref new">29</sup>. <strong>Pas d'inégalité triangulaire.</strong> Cas d'égalité et triangles semblables <strong>absents</strong> du cycle 4.</td>
+      <td class="evol" data-label="Évolution"><strong>Sortie</strong>&nbsp;: inégalité triangulaire (5<sup>e</sup>), cas d'égalité, triangles semblables.<br><span class="add">Ajout</span>&nbsp;: médianes en 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Parallélogrammes</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>Le parallélogramme est défini à partir de l'une de ses propriétés</q><sup class="ref rep">30</sup>, démonstration par la symétrie&nbsp;; propriétés des côtés opposés et des diagonales. Parallélogrammes particuliers en 4<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: définition, <q>propriétés caractéristiques des côtés opposés et des diagonales</q><sup class="ref new">31</sup>, plus rectangles, losanges, carrés et calculs d'aires.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Extension</span>&nbsp;: parallélogrammes particuliers et aires arrivent en 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Statistiques</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>calculs d'effectifs, de fréquences et de moyennes</q><sup class="ref rep">32</sup>. Médiane en 4<sup>e</sup>, étendue en 3<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Calculer et interpréter la moyenne simple d'une série de données</q><sup class="ref new">33</sup>. Médiane et étendue désormais en 4<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé en 5<sup>e</sup></span>. L'étendue avance de 3<sup>e</sup> en 4<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Probabilités</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>Le vocabulaire relatif aux probabilités (expérience aléatoire, issue, événement, probabilité) est utilisé</q><sup class="ref rep">34</sup>, équiprobabilité simple, échelle de probabilités.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Utiliser le vocabulaire des probabilités … : expérience aléatoire, issue, évènement</q><sup class="ref new">35</sup>, équiprobabilité, échelle.</td>
+      <td class="evol" data-label="Évolution"><span class="same">Inchangé</span> (le vocabulaire était déjà en 5<sup>e</sup>).</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Proportionnalité</td>
+      <td class="ancien" data-label="Ancien">Repères et attendus 5<sup>e</sup>&nbsp;: <q>linéarité, passage par l'unité, coefficient de proportionnalité</q><sup class="ref rep">36</sup>, pourcentages, échelles, <q>Il partage 10 € en deux parts selon le ratio 2:3</q><sup class="ref rep">37</sup> (ratios attendus en fin de 5<sup>e</sup>).</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: coefficient de proportionnalité, pourcentages, échelles. Les ratios et grandeurs quotients passent en 4<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><strong>Sortie de la 5<sup>e</sup></strong>&nbsp;: le ratio est déplacé en 4<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Fonctions</td>
+      <td class="ancien" data-label="Ancien">Repères 5<sup>e</sup>&nbsp;: <q>La dépendance de deux grandeurs est traduite par un tableau de valeurs ou une formule</q><sup class="ref rep">38</sup>. Lecture graphique en 4<sup>e</sup>. Linéaires et affines en 3<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Introduire l'expression : « en fonction de »</q><sup class="ref new">39</sup>, tableaux de valeurs, lecture graphique, points dans un repère. Linéaires et affines toujours en 3<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><span class="add">Légère extension</span>&nbsp;: la lecture graphique arrive en 5<sup>e</sup>.</td>
+    </tr>
+
+    <tr>
+      <td class="domain" data-label="Domaine">Algorithmique et programmation</td>
+      <td class="ancien" data-label="Ancien">Attendus fin de 5<sup>e</sup>&nbsp;: <q>Le niveau 1 est attendu en fin de 5<sup>e</sup></q><sup class="ref rep">40</sup>&nbsp;: blocs Scratch, boucle <q>répéter … fois</q><sup class="ref rep">41</sup>, instructions conditionnelles autorisées dès la 5<sup>e</sup>.</td>
+      <td class="nouveau" data-label="Nouveau">5<sup>e</sup>&nbsp;: <q>Effectuer une boucle inconditionnelle simple</q><sup class="ref new">42</sup>&nbsp;; <q>la notion de variable est vue uniquement … sous l'angle de la manipulation en lecture d'une donnée saisie</q><sup class="ref new">43</sup>. Conditionnelles repoussées en 4<sup>e</sup>.</td>
+      <td class="evol" data-label="Évolution"><strong>Restriction</strong>&nbsp;: les instructions conditionnelles, possibles en 5<sup>e</sup> auparavant, sont reportées en 4<sup>e</sup>.</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<h2><span class="num">§ 3</span>Synthèse révisée</h2>
+
+<div class="synthese">
+  <h3>Vraies apparitions en 5<sup>e</sup></h3>
+  <ul>
+    <li><strong>Puissances</strong> (carré et cube)&nbsp;: notion entièrement nouvelle en 5<sup>e</sup>, auparavant entièrement en 4<sup>e</sup>.</li>
+    <li><strong>Équations</strong> du type ax = c et x + b = c&nbsp;: formellement résolues en 5<sup>e</sup>, alors que l'ancien dispositif limitait la 5<sup>e</sup> au test d'égalité par essais.</li>
+    <li><strong>Médianes du triangle</strong> en 5<sup>e</sup>, avec démonstration que la médiane partage un triangle en deux aires égales.</li>
+    <li><strong>Parallélogrammes particuliers et aires</strong> entièrement traités en 5<sup>e</sup> (rectangles, losanges, carrés).</li>
+    <li><strong>Fractions de dénominateurs quelconques</strong>&nbsp;: extension par rapport à « égaux ou multiples ».</li>
+    <li><strong>Lecture graphique</strong> de fonctions amorcée en 5<sup>e</sup>.</li>
+  </ul>
+  <h3>Vraies sorties de la 5<sup>e</sup> (ou du cycle)</h3>
+  <ul>
+    <li><strong>Nombres premiers</strong> et décomposition en facteurs premiers&nbsp;: quittent la 5<sup>e</sup>, ne sont plus qu'un « prolongement possible ». Traitement formel décalé en 3<sup>e</sup>.</li>
+    <li><strong>Inégalité triangulaire</strong>&nbsp;: disparaît du programme.</li>
+    <li><strong>Cas d'égalité des triangles</strong> et <strong>triangles semblables</strong>&nbsp;: disparaissent du cycle 4.</li>
+    <li><strong>Rotation et homothétie</strong>&nbsp;: disparaissent du cycle 4 (étaient traitées en 3<sup>e</sup>).</li>
+    <li><strong>Ratio</strong>&nbsp;: déplacé de la 5<sup>e</sup> vers la 4<sup>e</sup>.</li>
+    <li><strong>Instructions conditionnelles en programmation</strong>&nbsp;: déplacées en 4<sup>e</sup>.</li>
+  </ul>
+  <h3>Évolutions structurelles indépendantes des contenus</h3>
+  <ul>
+    <li><strong>Statut juridique du découpage annuel.</strong> Les repères de progression étaient un document d'accompagnement à valeur indicative, modifiable. Le découpage annuel devient désormais partie intégrante du programme officiel (arrêté ministériel), ce qui réduit la liberté de progression des équipes.</li>
+    <li><strong>Inflation du préambule pédagogique.</strong> Le texte de 2026 prescrit explicitement des points laissés auparavant à l'appréciation des enseignants&nbsp;: usage de la calculatrice, place de l'oral, types d'écrits, modalités d'évaluation, compétences psychosociales, égalité filles-garçons.</li>
+    <li><strong>Rubriques ajoutées par niveau.</strong> « Automatismes » et « Prolongements possibles : mises en perspective historiques ou culturelles » figurent désormais explicitement à chaque domaine, pour chaque année.</li>
+  </ul>
+</div>
+
+<div class="notes">
+<h3>Notes et références</h3>
+<ol>
+  <li>BO n°31 du 30 juillet 2020, p. 129, tableau des compétences travaillées au cycle 4.</li>
+  <li>BO n°31 du 30 juillet 2020, p. 127, préambule du programme&nbsp;: «&nbsp;Ceci suppose de disposer d'automatismes&nbsp;».</li>
+  <li>BO n°10 du 5 mars 2026, Annexe 2, « Organisation du programme »&nbsp;: «&nbsp;En amont des objectifs d'apprentissage, une rubrique intitulée "Automatismes" recense les compétences fondamentales devant être acquises de manière fluide et durable.&nbsp;»</li>
+  <li>BO n°10 du 5 mars 2026, Annexe 2, idem.</li>
+  <li>Repères annuels de progression — 5<sup>e</sup>, éduscol, MENJ (2020), p. 1, rubrique « Nombres décimaux relatifs ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Nombres relatifs ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 1, rubrique « Fractions, nombres rationnels ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Nombres rationnels ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 3, rubrique « Divisibilité, nombres premiers ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 3, idem.</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Opérations ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Opérations », rubrique « Prolongements possibles »&nbsp;: «&nbsp;Notion de nombre premier et développements sur ce thème&nbsp;».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 3, rubrique « Puissances », colonne 4<sup>e</sup>.</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Puissances ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 4, rubrique « Distributivité ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Opérations » et « Calcul littéral et algébrique ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 5, rubrique « Équations ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Calcul littéral et algébrique ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Calcul littéral et algébrique ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 9, rubrique « Représenter l'espace ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Repérage sur une droite et dans le plan ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 8, rubrique « Calculs sur des grandeurs mesurables ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Représentation de l'espace ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Transformations ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 10, rubrique « Figures et configurations ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Angles ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 10, rubrique « Figures et configurations ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 10, rubrique « Figures et configurations ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Triangles ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 10, rubrique « Figures et configurations ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Parallélogrammes ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 6, rubrique « Statistiques ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Statistiques ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 6, rubrique « Probabilités ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Probabilités ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 7, rubrique « Proportionnalité ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 17, Attendus de fin d'année, « Résoudre des problèmes de proportionnalité ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 7, rubrique « Fonctions ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « Fonctions ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 23, Attendus de fin d'année, « Écrire, mettre au point, exécuter un programme ».</li>
+  <li>Repères annuels 5<sup>e</sup>, p. 12, rubrique « Écrire, mettre au point, exécuter un programme », 1<sup>er</sup> niveau.</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « La pensée informatique ».</li>
+  <li>BO n°10 du 5 mars 2026, classe de cinquième, domaine « La pensée informatique », introduction.</li>
+</ol>
+</div>
+
+<footer class="colophon">
+  Document analytique — version 2 corrigée intégrant les repères annuels de progression 5<sup>e</sup> publiés par éduscol. Sources&nbsp;: BOEN n°31 (30 juillet 2020), repères annuels 5<sup>e</sup> éduscol et BOEN n°10 (5 mars 2026). Toutes les citations entre guillemets sont issues verbatim des textes officiels.
+</footer>
+
+</div>
+</body>
+</html>
